@@ -1,0 +1,1 @@
+﻿DELETE FROM Track WHERE Id = 3;

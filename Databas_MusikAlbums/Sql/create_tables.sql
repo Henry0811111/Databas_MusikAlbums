@@ -1,0 +1,21 @@
+﻿
+CREATE TABLE Artist (
+  Id INTEGER PRIMARY KEY,
+  Name TEXT NOT NULL
+);
+
+CREATE TABLE Album (
+  Id INTEGER PRIMARY KEY,
+  Title TEXT NOT NULL,
+  ReleaseYear INTEGER,
+  ArtistId INTEGER NOT NULL,
+  FOREIGN KEY (ArtistId) REFERENCES Artist(Id)
+);
+
+CREATE TABLE Track (
+  Id INTEGER PRIMARY KEY,
+  Title TEXT NOT NULL,
+  DurationSeconds INTEGER,
+  AlbumId INTEGER NOT NULL,
+  FOREIGN KEY (AlbumId) REFERENCES Album(Id)
+);
